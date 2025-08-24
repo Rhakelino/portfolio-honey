@@ -75,56 +75,12 @@ function ProjectShowcase() {
    
   }, []);
 
-  // Fungsi navigasi manual
-  const navigateSlides = (direction) => {
-    if (swiperRef.current && swiperRef.current.swiper) {
-      const swiper = swiperRef.current.swiper;
-      if (direction === "next") swiper.slideNext();
-      else swiper.slidePrev();
-    }
-  };
 
   return (
     <section ref={sectionRef} className="max-w-5xl mx-auto px-4 py-12 relative">
       <h2 className="text-3xl font-bold text-center mb-8 text-white">
         My Projects
       </h2>
-      
-      {/* Custom Navigation Buttons (di atas swiper) */}
-      <div className="absolute top-1/2 left-0 right-0 z-10 flex justify-between px-4">
-        {/* Prev Button */}
-        <button 
-          onClick={() => navigateSlides('prev')}
-          className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors"
-        >
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-          </svg>
-        </button>
-        {/* Next Button */}
-        <button 
-          onClick={() => navigateSlides('next')}
-          className="bg-white/20 hover:bg-white/30 text-white rounded-full p-2 transition-colors"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-          </svg>
-        </button>
-      </div>
 
       {/* Swiper slider */}
       <Swiper
