@@ -133,7 +133,7 @@ const AboutSection = () => {
     }}
   >
     <img
-      src="images/profile1.png"    // Ganti dengan path/URL foto kamu!
+      src="images/profile.jpg"    // Ganti dengan path/URL foto kamu!
       alt="Foto Profil"
       className="w-full h-full object-cover rounded-2xl"  // FULL CARD STYLING
     />
