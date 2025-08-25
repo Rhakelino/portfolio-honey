@@ -4,6 +4,7 @@ import ProjectShowcase from '../components/Projects';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
+import Footer from '../components/Footer';
 
 export default function Home() {
 
@@ -17,6 +18,10 @@ export default function Home() {
             <AboutSection />
             {/* Projects Showcase */}
             <ProjectShowcase />
+
+            <SkillsSection />
+
+            <Footer />
         </div>
     );
 }
