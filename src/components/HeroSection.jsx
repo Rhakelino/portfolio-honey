@@ -117,7 +117,7 @@ const HeroSection = () => {
           distortAmount={10}
           shineDirection="left"
           mixBlendMode="lighten"
-          className="w-full h-full"
+          className="w-full h-full hidden md:block"
         />
       </div>
 

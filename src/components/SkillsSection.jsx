@@ -59,22 +59,35 @@ const SkillsSection = () => {
           ))}
         </div>
       </div>
-      <div style={{ height: '500px', position: 'relative', overflow: 'hidden', borderRadius: '12px', marginTop: '50px', cursor: 'pointer' }} className="max-w-4xl mx-auto flex flex-col items-center justify-center bg-[#252525] border border-[#333] p-6 shadow-lg hover:bg-[#2C2C2C] transition-all duration-300 ease-in-out transform hover:-translate-y-2">
-        <ImageTrail
-          items={[
-            'https://picsum.photos/id/287/300/300',
-            'https://picsum.photos/id/1001/300/300',
-            'https://picsum.photos/id/1025/300/300',
-            'https://picsum.photos/id/1026/300/300',
-            'https://picsum.photos/id/1027/300/300',
-            'https://picsum.photos/id/1028/300/300',
-            'https://picsum.photos/id/1029/300/300',
-            'https://picsum.photos/id/1030/300/300',
-            // ...
-          ]}
-          variant={2}
-        />
-      </div>
+    <div 
+  className="hidden md:block max-w-4xl mx-auto flex flex-col items-center justify-center bg-[#252525] border border-[#333] p-6 shadow-lg hover:bg-[#2C2C2C] transition-all duration-300 ease-in-out transform hover:-translate-y-2"
+  style={{ 
+    height: '500px', 
+    position: 'relative', 
+    overflow: 'hidden', 
+    borderRadius: '12px', 
+    marginTop: '50px', 
+    cursor: 'pointer' 
+  }}
+>
+  <ImageTrail
+    items={[
+      'https://picsum.photos/id/287/300/300',
+      'https://picsum.photos/id/1001/300/300',
+      'https://picsum.photos/id/1025/300/300',
+      'https://picsum.photos/id/1026/300/300',
+      'https://picsum.photos/id/1027/300/300',
+      'https://picsum.photos/id/1028/300/300',
+      'https://picsum.photos/id/1029/300/300',
+      'https://picsum.photos/id/1030/300/300',
+    ]}
+    variant={2}
+  />
+  <h2 className="text-[120px] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#1a1a1a] to-[#4a4a4a] dark:from-[#4a4a4a] dark:to-[#1a1a1a] tracking-tighter">
+    Hover Me.
+  </h2>
+  <p className="text-lg text-gray-500 mt-2">Variant 8</p>
+</div>
     </section>
   );
 };
