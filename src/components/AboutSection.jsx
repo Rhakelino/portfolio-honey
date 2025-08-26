@@ -118,29 +118,27 @@ const AboutSection = () => {
             </div>
           </div>
           {/* Image or Graphic */}
-         <div className="flex justify-center items-center">
-  <div
-    ref={cardRef}
-    className="w-64 h-64 bg-[#232526] rounded-2xl 
+          <div className="flex justify-center items-center">
+            <div
+              ref={cardRef}
+              className="w-64 h-64 bg-[#232526] rounded-2xl 
       flex justify-center items-center 
       transition-transform duration-300 
       transform-style-3d 
       will-change-transform 
       cursor-pointer"
-    style={{
-      transition: 'transform 0.1s ease-out',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
-    }}
-  >
-    <img
-      src="images/profile.jpg"    // Ganti dengan path/URL foto kamu!
-      alt="Foto Profil"
-      className="w-full h-full object-cover rounded-2xl"  // FULL CARD STYLING
-    />
-  </div>
-</div>
-
-
+              style={{
+                transition: 'transform 0.1s ease-out',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
+              }}
+            >
+              <img
+                src="images/profile.jpg"    // Ganti dengan path/URL foto kamu!
+                alt="Foto Profil"
+                className="w-full h-full object-cover rounded-2xl"  // FULL CARD STYLING
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

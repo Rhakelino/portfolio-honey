@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import Home from './Pages/Home'
+import ClickSpark from './components/ClickSpark'
 
 function App() {
 
   return (
-    <Home/>
+    <ClickSpark>
+      <Home />
+    </ClickSpark>
   )
 }
 
