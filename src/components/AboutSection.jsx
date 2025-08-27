@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Lanyard from './Lanyard'
+import ProfilePhoto from '/images/profile.jpg'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -12,6 +13,7 @@ const AboutSection = () => {
   const sectionRef = useRef(null)
   const textRef = useRef(null)
   const statsRef = useRef(null)
+  const cardRef = useRef(null);
   const lanyardWrapperRef = useRef(null)
 
   // Efek untuk mendeteksi layar mobile
@@ -33,7 +35,7 @@ const AboutSection = () => {
   }, []);
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && sectionRef.current) {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -54,11 +56,32 @@ const AboutSection = () => {
         { scale: 1, opacity: 1, duration: 0.8, stagger: 0.2, ease: 'back.out(1.7)' },
         '-=0.5'
       )
+
+      // Pastikan animasi card hanya berjalan di mobile
+      if (isMobile && cardRef.current) {
+        tl.fromTo(
+          cardRef.current,
+          { 
+            scale: 0.6, 
+            opacity: 0, 
+            y: 50 
+          },
+          { 
+            scale: 1, 
+            opacity: 1, 
+            y: 0, 
+            duration: 1, 
+            ease: 'elastic.out(1, 0.6)' 
+          },
+          '-=0.5'
+        );
+      }
+
       return () => {
         tl.kill()
       }
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <section 
@@ -75,7 +98,7 @@ const AboutSection = () => {
             }
           `}
         >
-          {/* Lanyard 3D Graphic - Pindahkan di atas di mobile */}
+          {/* Lanyard atau Foto 3D Graphic - Pindahkan di atas di mobile */}
           <div
             className={`
               flex justify-center items-center w-full 
@@ -86,11 +109,34 @@ const AboutSection = () => {
               mx-auto
             `}
           >
-            <Lanyard 
-              position={isMobile ? [0, -10, 15] : [0, 0, 15]} 
-              gravity={isMobile ? [0, -30, 0] : [0, -40, 0]} 
-              scale={isMobile ? 0.7 : 1}
-            />
+            {isMobile ? (
+              <div className="flex justify-center items-center pt-10">
+                <div
+                  ref={cardRef}
+                  className="w-64 h-64 bg-[#232526] rounded-2xl 
+                    flex justify-center items-center 
+                    transition-transform duration-300 
+                    transform-style-3d 
+                    will-change-transform 
+                    cursor-pointer"
+                  style={{
+                    transition: 'transform 0.1s ease-out',
+                    boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
+                  }}
+                >
+                  <img
+                    src={ProfilePhoto}
+                    alt="Foto Profil"
+                    className="w-full h-full object-cover rounded-2xl"
+                  />
+                </div>
+              </div>
+            ) : (
+              <Lanyard 
+                position={[0, 0, 15]} 
+                gravity={[0, -40, 0]} 
+              />
+            )}
           </div>
 
           {/* Text Content */}
