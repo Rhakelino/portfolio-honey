@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { TextPlugin } from 'gsap/TextPlugin'
-import GradientBlinds from './GradientBlinds'
+import LightRays from './LightRays'
 
 // Registrasi TextPlugin
 gsap.registerPlugin(TextPlugin)
@@ -92,40 +92,25 @@ const HeroSection = () => {
   return (
     <div
       ref={backgroundRef}
-      className="relative w-full h-screen overflow-hidden cursor-pointer"
-      style={{
-        pointerEvents: 'auto',
-        touchAction: 'none'
-      }}
+      className="relative w-full h-screen overflow-hidden"
     >
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          pointerEvents: 'auto'
-        }}
-      >
-        <GradientBlinds
-          gradientColors={['#1A0B2E']}
-          angle={0}
-          noise={0.3}
-          blindCount={12}
-          blindMinWidth={50}
-          spotlightRadius={0.5}
-          spotlightSoftness={1}
-          spotlightOpacity={1}
-          mouseDampening={0.15}
-          distortAmount={10}
-          shineDirection="left"
-          mixBlendMode="lighten"
-          className="w-full h-full hidden md:block"
+      <div className="absolute inset-0 z-0">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#0ffff"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
         />
       </div>
 
       <div
         className="relative z-10 flex flex-col justify-center items-center h-full text-center px-4"
-        style={{
-          pointerEvents: 'none'
-        }}
       >
         <p
           ref={subtitleRef}
