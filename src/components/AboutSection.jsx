@@ -124,11 +124,7 @@ const AboutSection = () => {
                     boxShadow: '0 10px 30px rgba(0,0,0,0.3)'
                   }}
                 >
-                  <img
-                    src={ProfilePhoto}
-                    alt="Foto Profil"
-                    className="w-full h-full object-cover rounded-2xl"
-                  />
+                 
                 </div>
               </div>
             ) : (
