@@ -18,10 +18,8 @@ export default function Home() {
             <AboutSection />
             {/* Projects Showcase */}
             <ProjectShowcase />
-
+            {/* Skills Section */}
             <SkillsSection />
-
-            <Footer />
         </div>
     );
 }

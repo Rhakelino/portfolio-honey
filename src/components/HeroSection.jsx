@@ -14,6 +14,15 @@ const HeroSection = () => {
   const buttonRef = useRef(null)
   const backgroundRef = useRef(null)
 
+
+  const handleDownloadCV = () => {
+    // Path ke file CV PDF di folder public atau lokasi asset
+    const cvPath = './file/CV_AFRILA_NURHANIFA.pdf';
+
+    // Membuat elemen anchor (link) sementara
+    window.open(cvPath, '_blank');
+  };
+
   useEffect(() => {
     // Timeline animasi utama
     const tl = gsap.timeline({
@@ -132,18 +141,17 @@ const HeroSection = () => {
         >
           Crafting innovative visual experiences that tell compelling stories and push creative boundaries.
         </p>
-
         <button
-          ref={buttonRef}
+          onClick={handleDownloadCV}
           className="bg-blue-600 hover:bg-blue-700 
-          text-white font-semibold 
-          px-8 md:px-10 py-3 md:py-4 
-          rounded-full 
-          transition-all duration-300 
-          ease-in-out 
-          hover:scale-105 
-          shadow-lg hover:shadow-xl
-          flex items-center gap-2"
+      text-white font-semibold 
+      px-8 md:px-10 py-3 md:py-4 
+      rounded-full 
+      transition-all duration-300 
+      ease-in-out 
+      hover:scale-105 
+      shadow-lg hover:shadow-xl
+      flex items-center gap-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
