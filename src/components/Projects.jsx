@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import gsap from 'gsap';
@@ -18,31 +19,36 @@ const PROJECTS = [
     url: '/images/branding-design.jpg', 
     alt: 'Branding Project',
     title: 'Branding Design',
-    description: 'Creative branding solution for modern businesses'
+    description: 'Creative branding solution for modern businesses',
+    id: 'branding-design'
   },
   { 
     url: '/images/social-media.jpg', 
     alt: 'Social Media Design',
     title: 'Social Media Design',
-    description: 'Engaging social media graphics'
+    description: 'Engaging social media graphics',
+    id: 'social-media'
   },
   { 
     url: '/images/video-editing.jpg', 
     alt: 'Video Editing Project',
     title: 'Video Editing',
-    description: 'Cinematic video production'
+    description: 'Cinematic video production',
+    id: 'video-editing'
   },
   { 
     url: '/images/ui-ux.jpg', 
     alt: 'UI/UX Project',
     title: 'UI/UX Design',
-    description: 'Intuitive user interface designs'
+    description: 'Intuitive user interface designs',
+    id: 'ui-ux'
   },
   { 
     url: '/images/photo-editing.jpg', 
     alt: 'Photo Editing Project',
     title: 'Photo Editing',
-    description: 'Intuitive user interface designs'
+    description: 'Professional photo enhancement',
+    id: 'photo-editing'
   }
 ];
 
@@ -121,10 +127,13 @@ function ProjectShowcase() {
                 alt={project.alt}
                 className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+              <Link to={`/projects/${project.id}`} className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                 <h3 className="text-white font-bold text-lg">{project.title}</h3>
                 <p className="text-gray-200 text-sm">{project.description}</p>
-              </div>
+                <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-blue-700">
+                  View Details
+                </button>
+              </Link>
             </div>
           </SwiperSlide>
         ))}
